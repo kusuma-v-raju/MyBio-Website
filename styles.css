@@ -1,0 +1,249 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --black: #1b1629;
+    --dkblue: #3b6583;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #cdf1f1;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Fredoka", monospace;
+    --sans: League Spartan, sans-serif;
+    --blue: #0f7ac7;
+    --lightblue: #4e7896;
+  }
+  /* border box model: https://css-tricks.com/box-sizing/ */
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  /* general styles for the page */
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    font-size: var(--font-size);
+    background-color: var(--aqua);
+    color: var(--black);
+  }
+  h1
+  h2
+  h3 {
+    margin: 0;
+  }
+  a {
+    color: var(--blue);
+  }
+  a:hover {
+      color: var(--dkblue);
+      text-decoration: none;
+  }
+  /* background decoration */
+  .gradient {
+    background: linear-gradient(90deg, rgba(56,43,55,1) 0%, rgba(111,98,195,1) 100%);
+    height: 2px;
+  }
+  .section-blue {
+    background-color: #a0cccc;
+  }
+/* nav bar */
+nav {
+  font-family: var(--mono);
+  font-size: 25px;
+  padding: 1rem;
+}
+nav h1 a{
+  font-family: var(--mono);
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+nav li:first-child {
+  text-align: center;
+  flex: 100%;
+}
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--blue); 
+}
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+  color: var(--blue);
+}
+nav a {
+  color: var(--dkblue);
+  text-decoration: none;
+  display: block;
+}
+nav a:hover,
+nav [class*="fa-"]:hover {
+      color: var(--black);
+}
+.button {
+    background-color: #49c9c9;
+    border-radius: 5px;
+    color: var(--white);
+    padding: 0.5rem;
+    text-decoration: none;
+}
+.button:hover {
+  color: var(--black);
+  background-color: #5fc7c7 ;
+}
+
+  /* intro styles */
+  #intro {
+        padding: 4rem 1rem 4rem 1rem;
+        margin: 0 auto;
+        max-width: 1200px;
+  } 
+  #intro p{
+      font-size: 1.3rem;
+      line-height: 1.5;
+      padding: 0;
+  }
+  #intro .name {
+    font-family: var(--sans);
+    font-size: 1rem;
+  }
+  .name span {
+    font-family: var(--mono);
+    font-size: 3rem;
+    color: var(--dkblue);
+    display: block;
+    font-weight: 300;
+  }
+  #intro h2 {
+      font-size: 2rem;
+      padding: 0;
+  }
+
+  /* Projects styling */
+  #projects {
+    padding: 4rem 1rem 4rem 1rem;
+  }
+
+  #projects h2 {
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--dkblue);
+    font-size: 3rem;
+  }
+
+  #projects h3{
+        font-size: 2rem;
+  }
+
+  #projects h4{
+    font-family: var(--mono);
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .blackbox {
+    padding: 1rem;
+    background-color: var(--black);
+    color: white;
+    border-radius: 10px;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  #projects ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  #projects img {
+      padding: 1rem;
+      margin: 2rem 0 4rem 0;
+      border-top: 1px solid var(--dkblue);
+      border-left: 1px solid var(--dkblue);
+      border-radius: 10px;
+  }
+
+  /* contact detailes styling */
+  #contact {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+  } 
+  #contact p {
+      font-family: var(--mono);
+  }
+  #contact p:last-child {
+      margin-top: 3rem;
+  }
+
+  /* footer styling */
+  footer {
+    text-align: center;
+    padding: 3rem 1rem 3rem 1rem;
+    margin: 0 auto;
+  }
+
+  footer ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style-type: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 2rem 0;
+    }
+
+  footer a{
+    text-decoration: none;
+  }
+
+  @media (min-width: 850px) {
+    article {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+    }
+
+    #projects img {
+      grid-column: 1/6;
+      grid-row: 1/2;
+    }
+    .text {
+      grid-column: 5/11;
+      grid-row: 1/2;
+      order: 2;
+      text-align: right;
+    }
+    #projects ul {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 850px) {
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    nav li:first-child {
+      margin: 0;
+      padding: 0;
+    }
+  }
